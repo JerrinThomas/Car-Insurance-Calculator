@@ -35,6 +35,10 @@ public class CarInsuranceCalculator
     {
         driver.Quit();
     }
+
+    /**
+     * Test case with all valid inputs and verify if the insurance quote is the given value.
+     */
     [Test]
     public void carInsuranceCalculator_AllValidInputs_VerifyInsuranceQuoteValueIs2500()
     {
@@ -62,6 +66,10 @@ public class CarInsuranceCalculator
             Assert.That(value, Is.EqualTo("$2500"));
         }
     }
+
+    /**
+    * Test case with age as 14 as input and verify if the validation error message is shown.
+    */
     [Test]
     public void carInsuranceCalculator_AgeAs14_VerifyAgeValidationError()
     {
@@ -87,6 +95,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("age-error")).Text, Is.EqualTo("Please enter a value greater than or equal to 16."));
     }
+
+    /**
+   * Test case with age as 50 and years of driving experience as 35 as inputs and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_AgeAs50AndYearsOfDrivingExperienceAs35_VerifyYearsOfDrivingExperienceValidationError()
     {
@@ -114,6 +126,10 @@ public class CarInsuranceCalculator
             Assert.That(value, Is.EqualTo("No Insurance for you!! Driver Age / Experience Not Correct"));
         }
     }
+
+    /**
+   * Test case with invalid email id as input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_InvalidEmailAddress_VerifyEmailAddressValidationError()
     {
@@ -139,6 +155,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("email-error")).Text, Is.EqualTo("Must be a valid email address"));
     }
+
+    /**
+   * Test case with invalid phone number as input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_InvalidPhoneNumber_VerifyPhoneNumberValidationError()
     {
@@ -165,6 +185,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("phone-error")).Text, Is.EqualTo("Phone Number must follow the patterns 111-111-1111 or (111)111-1111"));
     }
+
+    /**
+   * Test case with number of at fault accidents as -1 as input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_NumberOfAtFaultAccidentsNegative1_VerifyNumberOfAtFaultAccidentsValidationError()
     {
@@ -191,6 +215,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("accidents-error")).Text, Is.EqualTo("Please enter a value greater than or equal to 0."));
     }
+
+    /**
+   * Test case with invalid postal code as input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_InvalidPostalCode_VerifyPostalCodeValidationError()
     {
@@ -219,6 +247,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("postalCode-error")).Text, Is.EqualTo("Postal Code must follow the pattern A1A 1A1"));
     }
+
+    /**
+   * Test case with address omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitAddress_VerifyAddressValidationError()
     {
@@ -243,6 +275,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("address-error")).Text, Is.EqualTo("Address is required"));
     }
+
+    /**
+   * Test case with age omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitAge_VerifyAgeValidationError()
     {
@@ -271,6 +307,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("age-error")).Text, Is.EqualTo("Age (>=16) is required"));
     }
+
+    /**
+   * Test case with email address omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitEmailAddress_VerifyEmailAddressValidationError()
     {
@@ -295,6 +335,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("email-error")).Text, Is.EqualTo("email address is required"));
     }
+
+    /**
+   * Test case with first name omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitFirstName_VerifyFirstNameValidationError()
     {
@@ -320,6 +364,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("firstName-error")).Text, Is.EqualTo("First Name is required"));
     }
+
+    /**
+   * Test case with last name omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitLastName_VerifyLastNameValidationError()
     {
@@ -350,6 +398,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("lastName-error")).Text, Is.EqualTo("Last Name is required"));
     }
+
+    /**
+   * Test case with number of at fault accidents omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitNumberOfAtFaultAccidents_VerifyNumberOfAtFaultAccidentsValidationError()
     {
@@ -376,6 +428,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("accidents-error")).Text, Is.EqualTo("Number of accidents is required"));
     }
+
+    /**
+   * Test case with years of driving experience omitted with input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_OmitYearsOfDrivingExperience_VerifyYearsOfDrivingExperienceValidationError()
     {
@@ -402,6 +458,10 @@ public class CarInsuranceCalculator
         // Assert
         Assert.That(driver.FindElement(By.Id("experience-error")).Text, Is.EqualTo("Years of experience is required"));
     }
+
+    /**
+   * Test case with years of driving experience as -1 as input and verify if the validation error message is shown.
+   */
     [Test]
     public void carInsuranceCalculator_YearsOfDrivingExperienceAsNegative1_VerifyYearsOfDrivingExperienceValidationError()
     {
